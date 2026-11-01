@@ -1,7 +1,6 @@
 from django.shortcuts import render
-from .models import *
-from .posts import *
+from .models import Post
 
 def index(request):
-    index = Post.objects.all()
-    return render(request, 'allahHodbarh/index.html', {'index': index})
+    posts = Post.objects.all()
+    return render(request, 'allahHodbarh/index.html', {'posts': posts})
